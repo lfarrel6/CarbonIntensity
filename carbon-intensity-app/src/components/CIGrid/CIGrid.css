@@ -1,0 +1,27 @@
+#container{
+	margin-top:4rem;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 2fr;
+	grid-template-areas: 'reading timeline timeline'
+						 'pie-chart pie-chart map'
+						 'pie-chart pie-chart map';
+	background: rgba(200,200,200,1);
+}
+
+.grid-box{
+	border:1px solid #000;
+}
+
+#reading{
+	grid-area: reading;
+}
+#timeline{
+	grid-area: timeline;
+}
+#pie-chart{
+	grid-area:pie-chart;
+}
+#map{
+	grid-area:map;
+}

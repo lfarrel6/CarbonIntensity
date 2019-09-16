@@ -1,0 +1,33 @@
+#header-bar{
+	width: 100%;
+	position:fixed;
+	top:0;
+	height: 4rem;
+	background-image: linear-gradient(to bottom right, #68d370, #7cccc7);
+}
+
+#header-bar > *{
+	color: #fff;
+}
+
+#headline{
+	float: left;
+	margin-left: 1rem;
+}
+
+#headline ~ h3{
+	display: inline-block;
+	font-size: 2em;
+	margin:0.5rem 0rem;
+}
+
+#subtitle{
+	float:right;
+	margin-right:1rem;
+	/*margin-top:0.2rem;*/
+}
+
+#location-text{
+	cursor:pointer;
+	text-decoration: underline;
+}
