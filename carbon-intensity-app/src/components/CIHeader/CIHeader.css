@@ -3,7 +3,9 @@
 	position:fixed;
 	top:0;
 	height: 4rem;
-	background-image: linear-gradient(to bottom right, #68d370, #7cccc7);
+	/*background-image: linear-gradient(to bottom right, #68d370, #7cccc7);*/
+	background-image: linear-gradient(to bottom right, #74B2E0, #AB8286);
+	z-index: 999;
 }
 
 #header-bar > *{
@@ -25,6 +27,10 @@
 	float:right;
 	margin-right:1rem;
 	/*margin-top:0.2rem;*/
+}
+
+#map-icon{
+	font-size:1.5rem;
 }
 
 #location-text{

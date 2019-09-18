@@ -6,22 +6,103 @@
 	grid-template-areas: 'reading timeline timeline'
 						 'pie-chart pie-chart map'
 						 'pie-chart pie-chart map';
-	background: rgba(200,200,200,1);
+
+	--color-white:#fff;
+	--color-charcoal:#435159;
+
+	--color-very-positive:#00B327;
+	--color-positive:#BAC30A;
+	--color-moderate:#FEC31A;
+	--color-negative:#FF571C;
+	--color-very-negative:#FF2942;
 }
 
 .grid-box{
-	border:1px solid #000;
+	margin: 0.4rem;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.45);
+	transition: box-shadow 0.3s;
+	display: grid;
+	grid-template-rows: 18fr 1fr;
+	grid-template-areas: 'main'
+											 'retrieved';
+}
+
+.grid-box:hover{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+}
+
+.grid-box > div{
+	grid-area: main;
+	height:1rem;
+}
+.grid-box > div > h3:first{
+	top:0;
+	margin: 2rem auto 1rem auto;
+}
+
+.grid-box > .retrieved-timestamp{
+	grid-area: retrieved;
+}
+.retrieved-timestamp > p{
+	margin:0 0.5em;
+	text-align: right;
+	color: var(--color-charcoal);
+	font-size: 0.1em;
 }
 
 #reading{
 	grid-area: reading;
+	color: var(--color-white);
 }
+.reading-very-positive{
+	background-color: var(--color-very-positive);
+}
+.reading-positive{
+	background-color: var(--color-positive);
+}
+.reading-moderate{
+	background-color: var(--color-moderate);
+}
+.reading-negative{
+	background-color: var(--color-negative);
+}
+.reading-very-negative{
+	background-color: var(--color-very-negative);
+}
+
 #timeline{
 	grid-area: timeline;
+	color: var(--color-white);
+	background-image: linear-gradient(to bottom right, #74B2E0,#9CCE58);
 }
+.chart-container{
+	width:90%;
+	margin:auto;
+}
+
 #pie-chart{
 	grid-area:pie-chart;
+	color: var(--color-charcoal);
 }
 #map{
 	grid-area:map;
+	color: var(--color-charcoal);
 }
+
+.box-reading-rating{
+	padding: 0.5rem;
+
+}
+.box-reading-figures{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 'actual forecast'
+											 'actual-num forecast-num';
+}
+.box-reading-figures > #actual-title{ grid-area: actual; }
+.box-reading-figures > #actual-num{ grid-area: actual-num; margin-top:0; }
+
+.box-reading-figures > #forecast-title{ grid-area: forecast; }
+.box-reading-figures > #forecast-num{ grid-area: forecast-num; margin-top:0; }

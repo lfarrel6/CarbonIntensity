@@ -12,7 +12,7 @@ function CIHeader(props){
 		<header id='header-bar'>
 			<h3 id='headline'>Carbon Intensity</h3>
 			<h3><FontAwesomeIcon icon={faGlobeEurope} /></h3>
-			<h4 id='subtitle'><FontAwesomeIcon icon={faMapMarkerAlt}/> <span id='location-text'>{props.location}</span>'s Carbon Statistics.</h4>
+			<h4 id='subtitle'><span id='map-icon'><FontAwesomeIcon icon={faMapMarkerAlt}/></span> <span id='location-text'>{props.location}</span>'s Carbon Statistics.</h4>
 		</header>
 	);
 }
