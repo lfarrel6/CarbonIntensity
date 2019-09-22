@@ -1,6 +1,9 @@
 import React from 'react';
-import {READING_KEY, TIMELINE_KEY, PIE_CHART_KEY, MAP_KEY}  from '../../constants.js';
+import {LOCATION_KEY, READING_KEY, TIMELINE_KEY, PIE_CHART_KEY, MAP_KEY}  from '../../constants.js';
 import CanvasJSReact from '../../lib/canvasjs.react.js';
+
+import {faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -18,6 +21,9 @@ function CIBox(props){
 	else if(props.boxType === MAP_KEY){
 		return CIMapBox();
 	}
+	else if(props.boxType === LOCATION_KEY){
+		return CILocationBox('London');
+	}
 	else{
 		//should never hit - return empty div
 		return (<div></div>);
@@ -27,6 +33,14 @@ function CIBox(props){
 function getTimestamp(){
 	//should timestamp be given with props?
 	return new Date().toUTCString();
+}
+
+function CILocationBox(location){
+	return (
+		<section className='grid-box' id={LOCATION_KEY}>
+			<h3><span id='map-icon'><FontAwesomeIcon icon={faMapMarkerAlt}/></span> <span id='location-text'>{location}</span>'s Carbon Statistics</h3>
+		</section>
+	);
 }
 
 function CIReadingBox(trueVal,forecastVal){
@@ -49,7 +63,7 @@ function CIReadingBox(trueVal,forecastVal){
 	return (
 		<section id={READING_KEY} className={totalClassStr}>
 			<div>
-				<h3>Current Carbon Intensity</h3>
+				<h3 className='box-reading-header'>Current Carbon Intensity</h3>
 				<h3 className='box-reading-rating'>Moderate.</h3>
 				<section className='box-reading-figures'>
 					<h4 id='actual-title'>Actual</h4>

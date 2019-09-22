@@ -25,6 +25,18 @@
   color: #61dafb;
 }
 
+.loading-screen{
+  height: 100vh;
+  width:100%;
+  display:grid;
+  place-items:center;
+  transition: width 0.3s;
+  z-index:999;
+}
+#hidden-loader{
+  width:0%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

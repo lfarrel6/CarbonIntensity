@@ -6,6 +6,9 @@
 	/*background-image: linear-gradient(to bottom right, #68d370, #7cccc7);*/
 	background-image: linear-gradient(to bottom right, #74B2E0, #AB8286);
 	z-index: 999;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	place-items: center;
 }
 
 #header-bar > *{
@@ -15,12 +18,15 @@
 #headline{
 	float: left;
 	margin-left: 1rem;
+	font-family: 'Montserrat', 'sans-serif';
 }
 
 #headline ~ h3{
 	display: inline-block;
 	font-size: 2em;
-	margin:0.5rem 0rem;
+	margin:0.5rem 1rem;
+	float: right;
+	text-align:right;
 }
 
 #subtitle{

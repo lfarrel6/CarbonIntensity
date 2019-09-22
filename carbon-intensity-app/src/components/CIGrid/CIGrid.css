@@ -1,3 +1,6 @@
+/*
+Desktop Suitable Styling
+
 #container{
 	margin-top:4rem;
 	display:grid;
@@ -6,6 +9,27 @@
 	grid-template-areas: 'reading timeline timeline'
 						 'pie-chart pie-chart map'
 						 'pie-chart pie-chart map';
+
+	--color-white:#fff;
+	--color-charcoal:#435159;
+
+	--color-very-positive:#00B327;
+	--color-positive:#BAC30A;
+	--color-moderate:#FEC31A;
+	--color-negative:#FF571C;
+	--color-very-negative:#FF2942;
+}*/
+
+#container{
+	margin-top:4rem;
+	display:grid;
+	/*grid-template-rows: 1fr 1fr 1fr 2fr 4fr;*/
+	grid-template-rows: 1fr 2fr 2fr 3fr 4fr;
+	grid-template-areas: 'location'
+						 'reading' 
+						 'timeline'
+						 'pie-chart'
+						 'map';
 
 	--color-white:#fff;
 	--color-charcoal:#435159;
@@ -26,6 +50,7 @@
 	grid-template-rows: 18fr 1fr;
 	grid-template-areas: 'main'
 											 'retrieved';
+	background-color:var(--color-white);
 }
 
 .grid-box:hover{
@@ -48,13 +73,50 @@
 	margin:0 0.5em;
 	text-align: right;
 	color: var(--color-charcoal);
-	font-size: 0.1em;
+	font-size: 0.5em;
+}
+
+#location{
+	display: grid;
+	place-items: center;
+	color: var(--color-charcoal);
 }
 
 #reading{
 	grid-area: reading;
 	color: var(--color-white);
 }
+
+#reading > div{
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: 'header' 
+						 'rating'
+						 'figures';
+}
+
+.box-reading-header{
+	grid-area:header;
+	margin-top:3rem;
+}
+.box-reading-rating{
+	padding: 0.5rem;
+	grid-area: rating;
+}
+.box-reading-figures{
+	grid-area:figures;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 'actual forecast'
+						 'actual-num forecast-num';
+}
+.box-reading-figures > #actual-title{ grid-area: actual; margin-top:0;}
+.box-reading-figures > #actual-num{ grid-area: actual-num; margin:0; }
+
+.box-reading-figures > #forecast-title{ grid-area: forecast; margin-top: 0; }
+.box-reading-figures > #forecast-num{ grid-area: forecast-num; margin:0; }
+
 .reading-very-positive{
 	background-color: var(--color-very-positive);
 }
@@ -89,20 +151,3 @@
 	grid-area:map;
 	color: var(--color-charcoal);
 }
-
-.box-reading-rating{
-	padding: 0.5rem;
-
-}
-.box-reading-figures{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas: 'actual forecast'
-											 'actual-num forecast-num';
-}
-.box-reading-figures > #actual-title{ grid-area: actual; }
-.box-reading-figures > #actual-num{ grid-area: actual-num; margin-top:0; }
-
-.box-reading-figures > #forecast-title{ grid-area: forecast; }
-.box-reading-figures > #forecast-num{ grid-area: forecast-num; margin-top:0; }
